@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_chat_ui/flutter_chat_ui.dart';
 import 'package:flutter_chat_types/flutter_chat_types.dart' as types;
 import 'package:expandable/expandable.dart';
-import 'package:sway/services/api_service.dart';  // Import your API service
+import 'package:sway/services/api_service.dart'; 
 
 class ChatSupportScreen extends StatefulWidget {
   const ChatSupportScreen({super.key});
@@ -14,12 +14,12 @@ class ChatSupportScreen extends StatefulWidget {
 
 class _ChatSupportScreenState extends State<ChatSupportScreen> {
   final List<types.Message> _messages = [];
-  final _user = const types.User(id: 'user_id'); // Replace 'user_id' with the actual user ID
+  final _user = const types.User(id: 'user_id');
 
   @override
   void initState() {
     super.initState();
-    // Load initial chat messages if needed
+
   }
 
   void _handleSendPressed(types.PartialText message) {
@@ -34,7 +34,7 @@ class _ChatSupportScreenState extends State<ChatSupportScreen> {
       _messages.insert(0, textMessage);
     });
 
-    // Optionally send the message to your backend
+
     ApiService.sendMessage(message.text);
   }
 
@@ -83,7 +83,7 @@ class _ChatSupportScreenState extends State<ChatSupportScreen> {
       children: [
         _buildFAQItem('How to place an order?', 'To place an order, follow these steps...'),
         _buildFAQItem('How to track my order?', 'To track your order, go to...'),
-        // Add more FAQ items here
+    
       ],
     );
   }
